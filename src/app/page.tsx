@@ -1,7 +1,7 @@
 import { metadata } from './metadata';
 export { metadata };
 
-import AboutPage from './AboutPage';
+import IgnacioPage from './IgnacioPage';
 export default function Page() {
-  return <AboutPage />;
+  return <IgnacioPage />;
 }
