@@ -5,7 +5,6 @@ import {
   Container,
   Grid,
   Card,
-  CardMedia,
   CardContent,
   Fab,
   Link,
