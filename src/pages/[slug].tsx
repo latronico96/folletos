@@ -22,13 +22,14 @@ export default function EmprendimientoPage({ emprendimiento }: Props) {
         <meta property="og:image" content={emprendimiento.imagenPreviewUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`/${emprendimiento.slug}`} />
+        
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={emprendimiento.nombre} />
         <meta name="twitter:description" content={emprendimiento.descripcion} />
         <meta name="twitter:image" content={emprendimiento.imagenPreviewUrl} />
 
-         <meta name="facebook-domain-verification" content="iuwgsjg1d8rx9jllng6gjeni9lykt2" />
+         <meta name="facebook-domain-verification" content="0acxud42bjeaeadspdvtrs1uuqq5p9" />
          <meta name="google-site-verification" content="LPSt3_sjFJfq1Qv7_ISCHgBPvXt41xcRKK2Nzk_kRfU" />
 
       </Head>
