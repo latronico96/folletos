@@ -21,6 +21,10 @@ const geistMono = Geist_Mono({
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="es">
+      <head>
+         <meta name="facebook-domain-verification" content="iuwgsjg1d8rx9jllng6gjeni9lykt2" />
+         <meta name="google-site-verification" content="LPSt3_sjFJfq1Qv7_ISCHgBPvXt41xcRKK2Nzk_kRfU" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <CacheProvider value={clientSideEmotionCache}>
           {children}
