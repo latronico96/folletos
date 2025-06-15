@@ -105,7 +105,13 @@ export default function IgnacioPage() {
   }
   return (
     <Box sx={{background: 'white', minHeight: '100vh', height: '100vh' }}>
-      <Box sx={{background: 'linear-gradient(90deg, #52c7b8 0%, #34a79c 100%)', py: 4, textAlign: 'center' }}>
+      <Box sx={{
+        backgroundImage: 'url(/layered-waves-haikei.svg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        py: 4,
+        textAlign: 'center'
+      }}>
         <Typography
           variant="h3"
           component="h1"
@@ -151,7 +157,13 @@ export default function IgnacioPage() {
         </Grid>
       </Container>
 
-      <Box sx={{background: 'linear-gradient(90deg, #34a79c 0%, #52c7b8 100%)', textAlign: 'center', py: 3 }}>
+      <Box sx={{
+        backgroundImage: 'url(/layered-waves-haikei.svg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        textAlign: 'center', 
+        py: 3
+      }}>
         <Typography variant="body1">
           📩 Pedidos por Instagram:{' '}
           <Link href="https://instagram.com/NOLOTENGOTODAVIA/" target="_blank">
