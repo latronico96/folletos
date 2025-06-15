@@ -24,7 +24,7 @@ export default function IgnacioPage() {
         ✅ Imagen, descripción y precio<br/>
         ✅ Adaptado a celular y PC<br/>
         ✅ Diseño limpio y atractivo<br/>
-        ✅ <em>Mantenimiento mensual opcional:</em> cambios simples (precio, foto o texto) hasta 10 cambios por mes
+        ✅ <em>Mantenimiento mensual opcional:</em> incluye hasta 10 cambios simples (precio, foto o texto)
       `,
       recomendacion: 'Recomendado para emprendimientos nuevos o catálogos de prueba.',
       link: '/about',
@@ -34,31 +34,38 @@ export default function IgnacioPage() {
       armado: 15000,
       mantenimiento: 4000,
       descripcion: `
-        <strong>Para quienes quieren destacarse</strong><br/><br/>
+        <strong>Para quienes quieren destacarse y crecer</strong><br/><br/>
         ✅ Hasta <strong>21 productos</strong><br/>
         ✅ Diseño personalizado (colores, logo, portada)<br/>
-        ✅ Genenerar Imagenes Para subir como Hisorias con tus articulos <br/>
-        ✅ Cambios ilimitados de precios y fotos<br/>
+        ✅ Plantillas y diseños para redes sociales (Instagram, historias)<br/>
+        ✅ Cambios ilimitados en precios, fotos y textos<br/>
+        ✅ Optimización avanzada para celulares y tabletas<br/>
+        ✅ Soporte prioritario vía WhatsApp<br/>
+        ✅ Botón de contacto directo con WhatsApp
       `,
-      recomendacion: 'Recomendado para quienes quieren mejorar la presentación sin complicaciones.',
-      link: "",
+      recomendacion: 'Recomendado para quienes quieren mejorar su imagen y vender más sin complicarse.',
+      link: '',
     },
     {
       nombre: 'Premium',
       armado: 60000,
       mantenimiento: 10000,
       descripcion: `
-        <strong>Full personalizado</strong><br/><br/>
+        <strong>Solución full personalizada para marcas que quieren crecer a lo grande</strong><br/><br/>
         ✅ Hasta <strong>100 productos</strong><br/>
-        ✅ Diseño 100% a medida con secciones y portada<br/>
-        ✅ Dominio personalizado (.com.ar)<br/>
-        ✅ SEO básico para buscadores<br/>
-        ✅ <em>Mantenimiento completo:</em> sin límite razonable de cambios
+        ✅ Página web completa y 100% a medida con secciones, blog y tienda<br/>
+        ✅ Diseños profesionales para redes sociales (posts, historias, banners)<br/>
+        ✅ Dominio personalizado (.com.ar) y correo profesional<br/>
+        ✅ SEO avanzado para mejorar visibilidad en buscadores<br/>
+        ✅ Integración con WhatsApp Business y otras plataformas<br/>
+        ✅ Mantenimiento completo y soporte dedicado sin límite de cambios<br/>
+        ✅ Análisis mensual del tráfico y recomendaciones para mejorar ventas
       `,
-      recomendacion: 'Recomendado para marcas establecidas o quienes venden mucho por WhatsApp o Instagram.',
-      link: "",
+      recomendacion: 'Recomendado para marcas consolidadas o con alto volumen de ventas en redes sociales.',
+      link: '',
     },
   ];
+
 
   function PlanCard({ plan }: { plan: { nombre: string; armado: number; mantenimiento: number; descripcion: string; recomendacion: string; link: string } }) {
     return (

@@ -106,7 +106,7 @@ export const emprendimientos: Emprendimiento[] = [
   {
     slug: "dulce.momentopostres",
     nombre: "Dulce Momento",
-    descripcion: "Postres artesanales en Barrio el Hipodromo, La Plata 🍰",
+    descripcion: "Postres artesanales en Barrio el Hipodromo, La Plata 🍰 \n Costo del envio consultar por la zona. \n Cualquier consulta Al Mensaje Directo. 🌸",
     imagenPreviewUrl: "https://res.cloudinary.com/dd8syliu4/image/upload/v1749956919/Captura_de_pantalla_2025-06-15_000818_iwwrz6.png",
     instagram: "dulce.momentopostres",
     whatsAppPhone: "2216715803",

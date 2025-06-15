@@ -50,7 +50,12 @@ export default function Folleto({ emprendimiento }: Props) {
             maxWidth: 600,
           }}
         >
-          {emprendimiento.descripcion}
+          {emprendimiento.descripcion.split('\n').map((linea, i) => (
+              <span key={i}>
+                {linea}
+                <br />
+              </span>
+            ))}
         </Typography>
       </Box>
 
