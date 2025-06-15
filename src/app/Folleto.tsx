@@ -12,26 +12,17 @@ import {
   Typography,
 } from '@mui/material';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import { Emprendimiento } from "@/lib/emprendimientos";
+import { Instagram } from '@mui/icons-material';
 
-export default function FolletoCocol() {
-  const articulos = [
-    {
-      nombre: 'Torta de cumpleaños',
-      descripcion: 'Decoración personalizada. ¡Consultanos por sabores!',
-      imagen: 'https://source.unsplash.com/featured/?birthday-cake',
-      precio: 3500,
-    },
-    {
-      nombre: 'Torta de chocolate',
-      descripcion: 'Bizcochuelo húmedo y cobertura de mousse.',
-      imagen: 'https://source.unsplash.com/featured/?chocolate-cake',
-      precio: 4000,
-    },
-  ];
+type Props = {
+  emprendimiento: Emprendimiento;
+};
 
+export default function Folleto({ emprendimiento }: Props) {
   return (
-    <Box sx={{ backgroundColor: '#fff8f5', minHeight: '100vh', height: '100vh' }}>
-      <Box sx={{ bgcolor: '#ffe8e1', py: 4, textAlign: 'center' }}>
+    <Box sx={{ backgroundColor: emprendimiento.backgroundColor ?? '#fff8f5', minHeight: '100vh', height: '100%'}}>
+      <Box sx={{ bgcolor: emprendimiento.backgroundHeaderColor ?? '#ffe8e1', py: 4, textAlign: 'center' }}>
         <Typography
           variant="h3"
           component="h1"
@@ -46,7 +37,7 @@ export default function FolletoCocol() {
             fontWeight: 'bold',
           }}
         >
-          Pastelería Artesanal Cocol
+          {emprendimiento.nombre}
         </Typography>
         <Typography
           variant="h6"
@@ -59,13 +50,13 @@ export default function FolletoCocol() {
             maxWidth: 600,
           }}
         >
-          Tortas artesanales hechas con amor en La Plata 🍰
+          {emprendimiento.descripcion}
         </Typography>
       </Box>
 
       <Container sx={{ py: 4 }}>
         <Grid container spacing={4} justifyContent="center">
-          {articulos.map((art, index) => (
+          {emprendimiento.productos.map((art, index) => (
             <Grid key={index} size={{xs: 12, sm: 6, md: 4}}>
               <Card sx={{ position: 'relative' }}>
                 <Box
@@ -92,23 +83,26 @@ export default function FolletoCocol() {
         </Grid>
       </Container>
 
-      <Box sx={{ bgcolor: '#ffe8e1', textAlign: 'center', py: 3 }}>
+      <Box sx={{ bgcolor: emprendimiento.backgroundHeaderColor ?? '#ffe8e1', textAlign: 'center', py: 3 }}>
         <Typography variant="body1">
           📩 Pedidos por Instagram:{' '}
-          <Link href="https://instagram.com/cocol.pasteleria/" target="_blank">
-            @cocol.pasteleria
+          <Link href={"https://instagram.com/" + emprendimiento.instagram + "/"} target="_blank">
+            @{emprendimiento.instagram}
           </Link>{' '}
-          | WhatsApp: 11-3672-4619
+          | WhatsApp: {emprendimiento.whatsAppPhone}
         </Typography>
+        { emprendimiento.footerDescription && <Typography variant="body1" sx={{ mt: 1 }}>
+          {emprendimiento.footerDescription}  
+        </Typography> }
         <Typography variant="body2" sx={{ mt: 1 }}>
-          &copy; 2025 Cocol - Pastelería Artesanal
+          &copy; 2025 {emprendimiento.nombre}. Todos los derechos reservados.
         </Typography>
       </Box>
 
       <Fab
         color="success"
         aria-label="whatsapp"
-        href="https://wa.me/1136724619"
+        href={"https://wa.me/" + emprendimiento.whatsAppPhone}
         target="_blank"
         sx={{
           position: 'fixed',
@@ -121,6 +115,23 @@ export default function FolletoCocol() {
         }}
       >
         <WhatsAppIcon />
+      </Fab>
+            <Fab
+        color="success"
+        aria-label="Instagram"
+        href={"https://instagram.com/" + emprendimiento.instagram + "/"}
+        target="_blank"
+        sx={{
+          position: 'fixed',
+          bottom: 16,
+          right: 84,
+          bgcolor: '#E1306C',
+          '&:hover': {
+            bgcolor: '#c13584',
+          },
+        }}
+      >
+        <Instagram />
       </Fab>
     </Box>
   );
