@@ -28,6 +28,8 @@ export default function EmprendimientoPage({ emprendimiento }: Props) {
         <meta name="twitter:description" content={emprendimiento.descripcion} />
         <meta name="twitter:image" content={emprendimiento.imagenPreviewUrl} />
 
+         <meta name="facebook-domain-verification" content="iuwgsjg1d8rx9jllng6gjeni9lykt2" />
+         <meta name="google-site-verification" content="LPSt3_sjFJfq1Qv7_ISCHgBPvXt41xcRKK2Nzk_kRfU" />
 
       </Head>
       <Folleto emprendimiento={emprendimiento} />
