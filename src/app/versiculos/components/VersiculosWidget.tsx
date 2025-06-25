@@ -4,7 +4,8 @@ import { useState, useRef } from "react";
 import { Accordion, AccordionDetails, AccordionSummary, Box, CardContent, Toolbar, Typography } from "@mui/material";
 import Card from '@mui/material/Card';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import { toBlob } from "html-to-image";
+import ShareIcon from '@mui/icons-material/Share';
+import { shareNodeAsImage } from "@/lib/shareUtils";
 import VersiculoVersionSwitch from "./VersiculoVersionSwitch";
 import { getAllTarjetas } from "@/lib/tarjetas";
 
@@ -23,24 +24,12 @@ export default function VersiculosWidget() {
     const node = cardRefs.current[idx];
     if (!node) return;
     try {
-      const blob = await toBlob(node);
-      if (!blob) return;
-      const file = new File([blob], "versiculo.png", { type: blob.type });
-      const data = {
-        files: [file],
-        title: v.referencia,
-        text: `${version === "rv" ? v.rv : v.nvi}\n${window.location.href}`
-      };
-      if (navigator.canShare && navigator.canShare(data)) {
-        await navigator.share(data);
-      } else {
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'versiculo.png';
-        a.click();
-        URL.revokeObjectURL(url);
-      }
+      await shareNodeAsImage(node, {
+        hideSelector: '.share-btn',
+        fileName: 'versiculo.png',
+        shareTitle: v.referencia,
+        shareText: `${version === "rv" ? v.rv : v.nvi}\n${window.location.href}`
+      });
     } catch (err) {
       console.error(err);
     }
@@ -86,17 +75,30 @@ export default function VersiculosWidget() {
               {e.versiculos.map((v, idx) => (
                 <Card
                   key={v.referencia + idx}
-                  sx={{ maxWidth: 300, flex: '1 1 300px', backgroundColor: 'white' }}
+                  sx={{ maxWidth: 300, flex: '1 1 300px', backgroundColor: 'white', display: 'flex', flexDirection: 'column', height: 180 }}
                   ref={(el) => { cardRefs.current[index * 10 + idx] = el || null; }}
                 >
-                  <CardContent>
-                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                  <CardContent sx={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', p: 2 }}>
+                    <Typography variant="body2" sx={{ color: 'text.secondary', mb: 0.5 }}>
                       {v.referencia} - { version === "rv" ? v.rv : v.nvi }
                     </Typography>
+                    <Box sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-end' }}>
+                      <button 
+                        className="share-btn"
+                        onClick={() => handleShare(index * 10 + idx, v)} 
+                        style={{ 
+                          cursor: 'pointer',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 4,
+                          background: 'none',
+                          border: 'none',
+                          padding: 0 
+                      }}>
+                        <ShareIcon fontSize="small" />
+                      </button>
+                    </Box>
                   </CardContent>
-                  <Box sx={{ display: 'flex', justifyContent: 'flex-end', p: 1 }}>
-                    <button onClick={() => handleShare(index * 10 + idx, v)} style={{ cursor: 'pointer' }}>Compartir</button>
-                  </Box>
                 </Card>
               ))}
             </Box>
