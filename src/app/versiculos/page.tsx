@@ -88,14 +88,16 @@ export default function EmprendimientosPage() {
           <AccordionDetails>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
               {e.versiculos.map((v, idx) => (
-                <Card key={v.referencia + idx} sx={{ maxWidth: 300, flex: '1 1 300px' }}>
-                  <div ref={(el) => { cardRefs.current[index * 10 + idx] = el || null; }}>
-                    <CardContent>
-                      <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                        {v.referencia} - { version === "rv" ? v.rv : v.nvi }
-                      </Typography>
-                    </CardContent>
-                  </div>
+                <Card
+                  key={v.referencia + idx}
+                  sx={{ maxWidth: 300, flex: '1 1 300px', backgroundColor: 'white' }}
+                  ref={(el) => { cardRefs.current[index * 10 + idx] = el || null; }}
+                >
+                  <CardContent>
+                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                      {v.referencia} - { version === "rv" ? v.rv : v.nvi }
+                    </Typography>
+                  </CardContent>
                   <Box sx={{ display: 'flex', justifyContent: 'flex-end', p: 1 }}>
                     <button onClick={() => handleShare(index * 10 + idx, v)} style={{ cursor: 'pointer' }}>Compartir</button>
                   </Box>
