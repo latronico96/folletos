@@ -31,18 +31,31 @@ export async function shareNodeAsImage(
       title: shareTitle,
       text: shareText,
     };
+    await shareData(data);
+  } catch (err) {
+    console.error("Error al generar la imagen:", err);
+    hiddenNodes.forEach((el) => (el.style.display = ""));
+    throw err;
+  }
+}
+
+export async function shareData(data: ShareData) {
+  try {
     if (navigator.canShare && navigator.canShare(data)) {
       await navigator.share(data);
     } else {
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = fileName;
-      a.click();
-      URL.revokeObjectURL(url);
+      if (data.files) {
+        for (const file of data.files) {
+          const url = URL.createObjectURL(file);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = file.name;
+          a.click();
+          URL.revokeObjectURL(url);
+        }
+      }
     }
   } catch (err) {
-    hiddenNodes.forEach((el) => (el.style.display = ""));
     throw err;
   }
 }

@@ -14,6 +14,9 @@ import {
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { Emprendimiento } from "@/lib/emprendimientos";
 import { Instagram } from '@mui/icons-material';
+import { shareData } from '@/lib/shareUtils';
+import ShareIcon from '@mui/icons-material/Share';
+import { getDataToExport } from '@/lib/emprendimientos';
 
 type Props = {
   emprendimiento: Emprendimiento;
@@ -87,6 +90,23 @@ export default function Folleto({ emprendimiento }: Props) {
           ))}
         </Grid>
       </Container>
+
+      <Box sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-end' }}>
+        <button 
+          className="share-btn"
+          onClick={() => shareData(getDataToExport(emprendimiento))} 
+          style={{ 
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 4,
+            background: 'none',
+            border: 'none',
+            padding: 0 
+        }}>
+          <ShareIcon fontSize="small" />
+        </button>
+      </Box>
 
       <Box sx={{ bgcolor: emprendimiento.backgroundHeaderColor ?? '#ffe8e1', textAlign: 'center', py: 3 }}>
         <Typography variant="body1">
