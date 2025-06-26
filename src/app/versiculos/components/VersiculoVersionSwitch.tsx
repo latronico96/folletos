@@ -19,17 +19,42 @@ export default function VersiculoVersionSwitch({ value, onChange }: Props) {
     }
   };
 
-  return (
+ return (
     <ToggleButtonGroup
       value={value}
       exclusive
       onChange={handleChange}
       size="small"
-      color="primary"
-      aria-label="versión de la Biblia"
+      sx={{
+        backgroundColor: "#000",
+        borderRadius: 1,
+        border: "1px solid #444",
+      }}
     >
-      <ToggleButton value="rv">Reina Valera</ToggleButton>
-      <ToggleButton value="nvi">NVI</ToggleButton>
+      <ToggleButton
+        value="rv"
+        sx={{
+          color: "white",
+          "&.Mui-selected": {
+            backgroundColor: "#333",
+            color: "#90caf9",
+          },
+        }}
+      >
+        Reina Valera
+      </ToggleButton>
+      <ToggleButton
+        value="nvi"
+        sx={{
+          color: "white",
+          "&.Mui-selected": {
+            backgroundColor: "#333",
+            color: "#90caf9",
+          },
+        }}
+      >
+        NVI
+      </ToggleButton>
     </ToggleButtonGroup>
   );
 }
