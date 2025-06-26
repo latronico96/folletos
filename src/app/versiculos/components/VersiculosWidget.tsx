@@ -43,9 +43,10 @@ export default function VersiculosWidget() {
           alignItems: { xs: 'flex-start', sm: 'center' },
           flexDirection: { xs: 'column', sm: 'row' },
           padding: 2,
-          backgroundColor: '#f5f5f5',
+          backgroundColor: '#e1e8ff',
           borderBottom: '1px solid #e0e0e0',
-          gap: { xs: 1, sm: 0 }
+          gap: { xs: 1, sm: 0 },
+          justifyContent: { xs: 'flex-start', sm: 'center' }
         }}
       >
         <Toolbar sx={{ p: 0, minWidth: 0, width: { xs: '100%', sm: 'auto' } }}>
@@ -54,7 +55,7 @@ export default function VersiculosWidget() {
             component="div"
             sx={{ flexGrow: 1, minWidth: 200 }}
           >
-            ¿Hoy como te sentis?
+            Cuando te sentís...
           </Typography>
         </Toolbar>
         <Box sx={{ width: { xs: '100%', sm: 'auto' }, mt: { xs: 1, sm: 0 } }}>
@@ -62,15 +63,15 @@ export default function VersiculosWidget() {
         </Box>
       </Box>
       {tarjetas.map((e, index) => (
-        <Accordion key={e.emocion + index}>
+        <Accordion key={e.sentimiento + index}>
           <AccordionSummary
             expandIcon={<ArrowDownwardIcon />}
             aria-controls="panel1-content"
             id="panel1-header"
           >
-            <Typography component="span">{e.emocion}</Typography>
+            <Typography component="span">{e.sentimiento}</Typography>
           </AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails sx={{ backgroundColor: '#f1f1f1'}}>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
               {e.versiculos.map((v, idx) => (
                 <Card
@@ -79,8 +80,11 @@ export default function VersiculosWidget() {
                   ref={(el) => { cardRefs.current[index * 10 + idx] = el || null; }}
                 >
                   <CardContent sx={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', p: 2 }}>
+                    <Typography variant="caption" sx={{ color: 'text.secondary', mb: 0.5, textTransform: 'uppercase', fontWeight: 'bold'   }}>
+                      {v.referencia}
+                    </Typography>
                     <Typography variant="body2" sx={{ color: 'text.secondary', mb: 0.5 }}>
-                      {v.referencia} - { version === "rv" ? v.rv : v.nvi }
+                      { version === "rv" ? v.rv : v.nvi }
                     </Typography>
                     <Box sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-end' }}>
                       <button 
