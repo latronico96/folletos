@@ -168,10 +168,8 @@ export function getEmprendimientoBySlug(slug: string) {
 }
 
 export function getDataToExport(e: Emprendimiento): ShareData {
-
   const  imagenPreviewUrl: File = new File([e.imagenPreviewUrl], `${e.slug}.png`, { type: "image/png" });
-  const iamgenesAsFile: File[] = e.productos.map((p, i) => new File([p.imagen], `${e.slug + i}.png`, { type: "image/png" }));  
-
+  const iamgenesAsFile: File[] = e.productos.map((p, i) => new File([p.imagen], `${e.slug + i}.png`, { type: "image/png" }));
   return {
       files: [imagenPreviewUrl, ...iamgenesAsFile],
       title: e.descripcion,

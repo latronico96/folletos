@@ -76,7 +76,7 @@ export default function VersiculosWidget() {
               {e.versiculos.map((v, idx) => (
                 <Card
                   key={v.referencia + idx}
-                  sx={{ maxWidth: 300, flex: '1 1 300px', backgroundColor: 'white', display: 'flex', flexDirection: 'column', height: 180 }}
+                  sx={{ width: { xs: '100%', sm: '300px' }, flex: '1 1 300px', backgroundColor: 'white', display: 'flex', flexDirection: 'column' }}
                   ref={(el) => { cardRefs.current[index * 10 + idx] = el || null; }}
                 >
                   <CardContent sx={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', p: 2 }}>
