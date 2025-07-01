@@ -66,7 +66,7 @@ export const emprendimientos: Emprendimiento[] = [
     ],
   },
   {
-    slug: "cocol",
+    slug: "cocol2",
     nombre: "Pastelería Artesanal Cocol",
     descripcion: "Tortas artesanales hechas con amor en La Plata 🍰",
     imagenPreviewUrl: "/placeholder.jpg",
