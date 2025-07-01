@@ -11,7 +11,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import Link from 'next/link';
 
 const pages = ['Inicio', 'Nosotros', 'Productos', 'Contacto'];
@@ -37,7 +36,12 @@ export default function Header() {
     <AppBar position="static" sx={{ backgroundColor: '#ffe8e1', color: '#000' }} elevation={0}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <Box component="img" src="/cocol.png" alt="Logo Cocol" sx={{
+                display: { xs: 'none', md: 'flex' },
+                mr: 1,
+                height: 32,
+              }}
+            />
           <Typography
             variant="h6"
             noWrap
@@ -77,7 +81,13 @@ export default function Header() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          
+          <Box component="img" src="/cocol.png" alt="Logo Cocol" sx={{
+                display: { xs: 'flex', md: 'none' },
+                mr: 1,
+                height: 32,
+              }}
+            />
           <Typography
             variant="h5"
             noWrap
@@ -87,12 +97,9 @@ export default function Header() {
               mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
               color: '#000',
               textDecoration: 'none',
-              justifyContent: 'flex-end',
+              justifyContent: 'flex-start',
             }}
           >
             COCOL

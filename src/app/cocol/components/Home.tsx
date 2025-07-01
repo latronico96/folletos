@@ -36,13 +36,13 @@ export default function Page() {
                 Bienvenidos a Cocol
             </Typography>
             <Typography variant="h6">
-                Pastelería artesanal hecha con amor en La Plata 🍰
+              Pastelería artesanal hecha con amor en La Plata 
             </Typography>
             <Typography variant="body1" sx={{ mt: 3 }}>
-                Celebramos la vida con dulzura: tortas, cajas temáticas, desayunos y mucho más.
+              Creamos dulzura para cada ocasión: tortas personalizadas, cajas temáticas, desayunos, viandas caseras y más.
             </Typography>
         </Box>
-        <Container sx={{ py: 6 }}>
+        <Container sx={{ py: 2}}>
             <Typography variant="h4" textAlign="center" mb={4}>
             Lo que hacemos
             </Typography>
@@ -52,7 +52,7 @@ export default function Page() {
                   <Card sx={{ height: '100%' }}>
                       <CardMedia
                       component="img"
-                      height="180"
+                      sx={{ height: 180, width: "100%", objectFit: 'cover' }}
                       image={prod.imagen}
                       alt={prod.titulo}
                       />
@@ -67,7 +67,7 @@ export default function Page() {
         </Container>
         <Box sx={{ py: 6, textAlign: 'center' }}>
           <Typography variant="body1" mb={3}>
-            En Cocol armamos toda la mesa dulce para vos: tortas, alfajores, mini postres, sándwiches y más. Hacemos todo con amor y a tu medida 💕
+            En Cocol armamos la mesa dulce completa para tu evento: tortas, alfajores, mini postres, sándwiches artesanales y más. Todo casero, fresco y hecho con dedicación.
           </Typography>
           <Button variant="outlined" color="secondary" href="https://wa.me/9541136724619" target="_blank" >
             Pedí tu presupuesto por WhatsApp
