@@ -298,7 +298,7 @@ export default function Productos() {
           '17.1.jpg', 
           '17.2.jpg',
         ],
-      },,
+      },
       {
         nombre: 'Lingote Red Velvet',
         descripcion: '🌹Red Velvet en formato lingote ✨' +
