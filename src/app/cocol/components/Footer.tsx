@@ -14,7 +14,7 @@ export default function Footer() {
       </Typography>
       <Fab color="success"
         aria-label="whatsapp"
-        href="https://wa.me/9541136724619"
+        href="https://wa.me/1136724619"
         target="_blank"
         sx={{ position: 'fixed', bottom: 16, right: 16, bgcolor: '#25D366', '&:hover': { bgcolor: '#1ebe5b', }}}
       >

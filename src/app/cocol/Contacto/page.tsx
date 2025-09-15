@@ -22,7 +22,8 @@ export default function ContactoPage() {
     `Hola! Soy ${form.nombre}, mi email es ${form.email}. Quisiera hacer una consulta:\n${form.mensaje}`
   );
 
-  const mailtoLink = `mailto:sofi.arce@gmail.com?subject=Consulta desde el sitio&body=Nombre: ${form.nombre}%0AEmail: ${form.email}%0AMensaje:%0A${form.mensaje}`;
+  const mailtoBody = `Nombre: ${form.nombre}\nEmail: ${form.email}\nMensaje:\n${form.mensaje}`;
+  const mailtoLink = `mailto:sofi.arce@gmail.com?subject=${encodeURIComponent("Consulta desde el sitio")}&body=${encodeURIComponent(mailtoBody)}`;
 
   return <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', }}>
     <Header />

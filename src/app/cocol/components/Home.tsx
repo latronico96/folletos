@@ -69,7 +69,7 @@ export default function Page() {
           <Typography variant="body1" mb={3}>
             En Cocol armamos la mesa dulce completa para tu evento: tortas, alfajores, mini postres, sándwiches artesanales y más. Todo casero, fresco y hecho con dedicación.
           </Typography>
-          <Button variant="outlined" color="secondary" href="https://wa.me/9541136724619" target="_blank" >
+          <Button variant="outlined" color="secondary" href="https://wa.me/1136724619" target="_blank" >
             Pedí tu presupuesto por WhatsApp
           </Button>
         </Box>
