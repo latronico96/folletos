@@ -164,7 +164,7 @@ export const emprendimientos: Emprendimiento[] = [
         imagen: "https://res.cloudinary.com/dd8syliu4/image/upload/v1749954863/Captura_de_pantalla_2025-06-14_233408_kyyasr.png",
       },
     ],
-    imagePerfil: "https://res.cloudinary.com/dd8syliu4/image/upload/v1749956919/Captura_de_pantalla_2025-06-15_000818_iwwrz6.png",
+    imagePerfil: "https://res.cloudinary.com/dd8syliu4/image/upload/v1758080466/Captura_de_pantalla_2025-06-15_000818_iwwrz6_e369b5.png",
     backgroundFontHeaderColor: "#00fff2"
   },
 ];
