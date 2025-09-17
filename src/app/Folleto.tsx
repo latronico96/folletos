@@ -27,7 +27,7 @@ export default function Folleto({ emprendimiento }: Props) {
   return (
     <Box sx={{ backgroundColor: emprendimiento.backgroundColor ?? '#fff8f5', minHeight: '100vh', height: '100%'}}>
       <Box sx={{ bgcolor: emprendimiento.backgroundHeaderColor ?? '#0a0056', py: 4, textAlign: 'center', color: emprendimiento.backgroundFontHeaderColor ?? '' }}>
-        <Box
+        {emprendimiento.imagePerfil &&  <Box
           sx={{
             display: "flex",
             justifyContent: "center",
@@ -40,7 +40,7 @@ export default function Folleto({ emprendimiento }: Props) {
             src={emprendimiento.imagePerfil}
             sx={{ width: 120, height: 120 }}
           />
-        </Box>
+        </Box>}
         <Typography
           variant="h3"
           component="h1"
