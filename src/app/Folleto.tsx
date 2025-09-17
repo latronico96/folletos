@@ -1,6 +1,7 @@
 'use client';
 
 import {
+  Avatar,
   Box,
   Container,
   Grid,
@@ -25,7 +26,21 @@ type Props = {
 export default function Folleto({ emprendimiento }: Props) {
   return (
     <Box sx={{ backgroundColor: emprendimiento.backgroundColor ?? '#fff8f5', minHeight: '100vh', height: '100%'}}>
-      <Box sx={{ bgcolor: emprendimiento.backgroundHeaderColor ?? '#ffe8e1', py: 4, textAlign: 'center' }}>
+      <Box sx={{ bgcolor: emprendimiento.backgroundHeaderColor ?? '#0a0056', py: 4, textAlign: 'center', color: emprendimiento.backgroundFontHeaderColor ?? '' }}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            minHeight: "200px",
+          }}
+        >
+          <Avatar
+            alt={emprendimiento.nombre}
+            src={emprendimiento.imagePerfil}
+            sx={{ width: 120, height: 120 }}
+          />
+        </Box>
         <Typography
           variant="h3"
           component="h1"
@@ -78,7 +93,7 @@ export default function Folleto({ emprendimiento }: Props) {
                     fontWeight: 'bold',
                   }}
                 >
-                  ${art.precio}
+                  {art.precio}
                 </Box>
                 <CardMedia component="img" height="200" image={art.imagen} alt={art.nombre} />
                 <CardContent>
@@ -108,13 +123,13 @@ export default function Folleto({ emprendimiento }: Props) {
         </button>
       </Box>
 
-      <Box sx={{ bgcolor: emprendimiento.backgroundHeaderColor ?? '#ffe8e1', textAlign: 'center', py: 3 }}>
+      <Box sx={{ bgcolor: emprendimiento.backgroundHeaderColor ?? '#ffe8e1', textAlign: 'center', py: 3, color: emprendimiento.backgroundFontHeaderColor ?? 'black' }}>
         <Typography variant="body1">
           📩 Pedidos por Instagram:{' '}
           <Link href={"https://instagram.com/" + emprendimiento.instagram + "/"} target="_blank">
             @{emprendimiento.instagram}
           </Link>{' '}
-          | WhatsApp: {emprendimiento.whatsAppPhone}
+          | WhatsApp: <Link href={"https://wa.me/" + emprendimiento.whatsAppPhone}>{emprendimiento.whatsAppPhone}</Link>
         </Typography>
         { emprendimiento.footerDescription && <Typography variant="body1" sx={{ mt: 1 }}>
           {emprendimiento.footerDescription}  

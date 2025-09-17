@@ -9,6 +9,8 @@ export type Emprendimiento = {
   backgroundColor?: string;
   backgroundHeaderColor?: string;
   footerDescription?: string;
+  imagePerfil: string;
+  backgroundFontHeaderColor: string;
 };
 
 export type Producto = {
@@ -27,7 +29,7 @@ export const emprendimientos: Emprendimiento[] = [
     instagram: "perfil.falso",
     whatsAppPhone: "221-XXX-XXXX",
     productos: [
-        {
+      {
         nombre: 'Articulo 1',
         descripcion: 'Contar de que es el articulo, que hace, etc.',
         imagen: 'https://picsum.photos/200/300/?random=1&blur',
@@ -64,6 +66,8 @@ export const emprendimientos: Emprendimiento[] = [
         precio: '3500',
       },
     ],
+    imagePerfil: "",
+    backgroundFontHeaderColor: ""
   },
   {
     slug: "cocol2",
@@ -86,6 +90,8 @@ export const emprendimientos: Emprendimiento[] = [
         imagen: 'https://source.unsplash.com/featured/?chocolate-cake',
       },
     ],
+    imagePerfil: "",
+    backgroundFontHeaderColor: ""
   },
   {
     slug: "panaderia-luna",
@@ -102,6 +108,8 @@ export const emprendimientos: Emprendimiento[] = [
         imagen: "/placeholder.jpg",
       },
     ],
+    imagePerfil: "",
+    backgroundFontHeaderColor: ""
   },
   {
     slug: "dulce.momentopostres",
@@ -110,7 +118,7 @@ export const emprendimientos: Emprendimiento[] = [
     imagenPreviewUrl: "https://res.cloudinary.com/dd8syliu4/image/upload/v1749956919/Captura_de_pantalla_2025-06-15_000818_iwwrz6.png",
     instagram: "dulce.momentopostres",
     whatsAppPhone: "2216715803",
-    backgroundHeaderColor: "#F1BB95",
+    backgroundHeaderColor: "#0a0056",
     footerDescription: "Costo del envio consultar por la zona. Cualquier consulta Al Mensaje Directo. 🌸",
     productos: [
       {
@@ -156,6 +164,8 @@ export const emprendimientos: Emprendimiento[] = [
         imagen: "https://res.cloudinary.com/dd8syliu4/image/upload/v1749954863/Captura_de_pantalla_2025-06-14_233408_kyyasr.png",
       },
     ],
+    imagePerfil: "https://res.cloudinary.com/dd8syliu4/image/upload/v1749956919/Captura_de_pantalla_2025-06-15_000818_iwwrz6.png",
+    backgroundFontHeaderColor: "#00fff2"
   },
 ];
 
